@@ -1,0 +1,35 @@
+<h4>Lista de Usuarios</h4>
+<hr>
+<%= link_to 'Nuevo', new_user_path,class:"btn btn-primary btn-sm" %>
+
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Usuario</th>
+      <th>Tipo Usuario</th>
+      <th>Nombre</th>    
+      <th>Rol</th>
+      <th>Estado</th>   
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usersExt.each do |user| %>
+      <tr>
+        <td><a href="/users/<%= user['id'] %>"><%= user['id'] %></a> </td>
+        <td><%= user['usuario'] %></td>
+        <td><%= user['tipo'] %></td>
+        <td><%= user['nombre'] %></td>  
+        <td><%= user['rol'] %></td>   
+        <td><%= user['estado'] %></td>          
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

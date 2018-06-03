@@ -1,0 +1,33 @@
+<h4>Lista de Parametros</h4>
+<hr>
+<%= link_to 'Nuevo', new_parametro_path, class:"btn btn-primary btn-sm" %>
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+     <th>Id</th>
+      <th>Atributo</th>
+      <th>Descripcion</th>
+      <th>Estado</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parametros.each do |parametro| %>
+      <tr>
+        <td><a class="llaves" href="/parametros/<%= parametro.id %>"><%= parametro.id %></a></td>
+        <td><%= parametro.atributo %></td>
+        <td><%= parametro.descripcion %></td>
+        <td><%= parametro.estadoparametro %></td>
+        <!-- <td><%= link_to 'Destroy', parametro, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="digg_pagination mt-2"> 
+  <%= will_paginate @parametros, :container => false %>
+</div>
+
+

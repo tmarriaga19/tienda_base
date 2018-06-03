@@ -1,0 +1,44 @@
+<h4>Lista de Productos</h4>
+<hr>
+<%  if @operaciones.include?("Crear") %>
+   <%= link_to 'Nuevo', new_producto_path, class:"btn btn-primary btn-sm mb-2" %>
+<%end %>
+<p id="notice"><%= notice %></p>
+<table class="table table-striped" >
+  <thead>
+    <tr>
+       <th>ID</th>
+      <th>Nombre</th>
+      <th>Descipcion</th>
+      <th>Ref</th>
+      <th>Precio</th>
+      <th>Tipo</th>
+      <th>Categoria</th>   
+      <th>Stock</th>
+      <th>Imagen</th>  
+      <th>Estado</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productosExt.each do |producto| %>
+      <tr>
+        <td><a href="/productos/<%= producto['id'] %>"><%= producto['id'] %></a></td>
+        <td><%= producto['nombre'] %></td>
+        <td><%= producto['descripcion'] %></td>
+        <td><%= producto['ref'] %></td>
+        <td><%= producto['precio'] %></td>
+        <td><%= producto['tipo'] %></td>
+        <td><%= producto['categoria'] %></td>       
+        <td><%= producto['stock'] %></td>
+        <td><%= producto['imagen'] %></td>
+        <td><%= producto['estado'] %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
