@@ -16,8 +16,18 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'jquery-rails'
 gem 'rails', '~> 5.1.6'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+
+group :development do
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+end
+
+#Gemas para sacar a produccion
+group :production do
+  gem 'pg', '~> 1.0'
+  gem 'rails_12factor', '~> 0.0.3'
+end
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -54,10 +64,5 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-#Gemas para sacar a produccion
-group :production do
-  gem 'pg', '~> 1.0'
-  gem 'rails_12factor', '~> 0.0.3'
-end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
