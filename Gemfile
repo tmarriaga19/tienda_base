@@ -54,6 +54,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+#Gemas para sacar a produccion
 group :production do
   gem 'pg', '~> 1.0'
   gem 'rails_12factor', '~> 0.0.3'
