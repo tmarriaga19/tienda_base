@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   resources :parametros
   resources :valorparametros
   post '/users/traer', to:'users#traer'
+  post '/valorparametros/traerValorParametro', to:'valorparametros#traerValorParametro'
   resources :users
 
   resources :clientes
+  post '/clientes/guardar', to:'clientes#guardar'
   get 'prueba/index'
   get  '/productos1', to:'productos#index'
   get '/valp/:id', to: "valorparametros#index"
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   get '/mostrarCarrito', to:'productos#mostrarCarrito'
   get '/eliminarCarrito', to:'productos#eliminarDelCarrito'
   get '/listarProductos', to:'productos#listar'
+  get '/registrar', to: 'clientes#registrar'
   resources :productos
   resources :empleados
   resources :role_option_operations

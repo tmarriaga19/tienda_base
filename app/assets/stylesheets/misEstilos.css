@@ -114,4 +114,9 @@ label{
 	height: 1%; }
 *:first-child + html .digg_pagination {
 	overflow: hidden; }
+
+	.principal{
+		margin:0 0px 80px 0px;
+		background-color:white;
+	}
   

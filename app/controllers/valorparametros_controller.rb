@@ -3,6 +3,7 @@ class ValorparametrosController < ApplicationController
 
   # GET /valorparametros
   # GET /valorparametros.json
+  include Servicios
   def index
     # @valorparametros = Valorparametro.all
     @valorparametros = Valorparametro.search(params[:term], params[:page]).where("parametro_id = ?",params[:id])
@@ -36,6 +37,13 @@ class ValorparametrosController < ApplicationController
     render layout: "layout_simple"
    
   end
+
+  def traerValorParametro    
+    @valorparametros=TraerValorParametroJson(params[:id])
+     respond_to do |format|      
+       format.json { render json:@valorparametros.to_json}      
+     end
+ end
 
   # POST /valorparametros
   # POST /valorparametros.json

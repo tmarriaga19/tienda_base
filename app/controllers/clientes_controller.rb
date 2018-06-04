@@ -12,8 +12,34 @@ class ClientesController < ApplicationController
   def show
   end
 
+  def guardar
+    @cliente = Cliente.new()
+    @cliente.nombres = params[:nombres]
+    @cliente.apellidos = params[:apellidos]
+    @cliente.identificacion = params[:noidentificacion]
+    @cliente.idtipoidentificacion = params[:tipoidentificacion]
+    @cliente.razonSocial = params[:razonsocial]
+    @cliente.correo = params[:email]
+    @cliente.direccion = params[:direccion]
+    @cliente.telefonos = params[:telefono]
+    @cliente.idtipocliente = params[:tipocliente]
+    @cliente.idcategoriacliente = params[:categoriacliente]
+    @cliente.idgenero = params[:genero]
+    if @cliente.save
+      resp = "Se ha guardado el registro exitosamente."
+    else
+      resp = "houston tenemos un problema"
+    end
+
+  end
+
   # GET /clientes/new
   def new
+    @cliente = Cliente.new
+  end
+
+  # Registrar Cliente
+  def registrar
     @cliente = Cliente.new
   end
 

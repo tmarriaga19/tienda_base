@@ -4,9 +4,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-#Informacion de la base de datos
-gem 'annotate', '~> 2.7', '>= 2.7.3'
 #paginado en vistas
 gem "will_paginate"
 # Iconos 
@@ -16,18 +13,8 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'jquery-rails'
 gem 'rails', '~> 5.1.6'
-
-group :development do
-  # Use mysql as the database for Active Record
-  gem 'mysql2', '>= 0.3.18', '< 0.6.0'
-end
-
-#Gemas para sacar a produccion
-group :production do
-  gem 'pg', '~> 1.0'
-  gem 'rails_12factor', '~> 0.0.3'
-end
-
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

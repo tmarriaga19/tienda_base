@@ -94,6 +94,15 @@ module Servicios
       end
    end
 
+   def TraerValorParametroJson(parametro_id)
+      res1=Valorparametro.where("parametro_id=#{parametro_id}")
+      res= res1.map do |r| {
+        "id"          => r.id,
+        "valor"      => r.valor
+     }
+    end
+   end
+
    def TraerUsuario(idtipo,id)
 
     if idtipo==35       #es cliente
